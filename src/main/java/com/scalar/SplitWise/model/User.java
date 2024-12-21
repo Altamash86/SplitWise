@@ -6,12 +6,12 @@ import lombok.*;
 
 import java.util.List;
 
-@Entity(name = "splitwise_user")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Entity(name = "splitwise_user")
 public class User extends BaseModel{
     private String name;
     private String email;

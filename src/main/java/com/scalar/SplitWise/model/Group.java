@@ -1,14 +1,16 @@
 package com.scalar.SplitWise.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
 
-@Entity(name = "splitwise_group")
 @Getter
 @Setter
+@Entity(name = "splitwise_group")
 public class Group extends BaseModel{
     private String name;
     private String description;

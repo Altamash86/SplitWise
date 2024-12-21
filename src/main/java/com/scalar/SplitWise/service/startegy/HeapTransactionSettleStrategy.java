@@ -38,7 +38,7 @@ public class HeapTransactionSettleStrategy implements TransactionSettleUpStrateg
             }
         }
 
-        while(!minHeap.isEmpty() && !maxHeap.isEmpty()){
+        while(!minHeap.isEmpty()){
             var transaction1 =  minHeap.poll();
             var transaction2 = maxHeap.poll();
             assert transaction2 != null;
@@ -49,14 +49,8 @@ public class HeapTransactionSettleStrategy implements TransactionSettleUpStrateg
             if(transaction1.getValue()!=0){
                 minHeap.add(transaction1);
             }
-            else{
-                System.out.println(transaction1.getKey().getName() + "'s is already settled up");
-            }
             if(transaction2.getValue()!=0){
                 maxHeap.add(transaction2);
-            }
-            else{
-                System.out.println(transaction1.getKey().getName() + "'s is already settled up");
             }
 
             /* Sandeep Logic
