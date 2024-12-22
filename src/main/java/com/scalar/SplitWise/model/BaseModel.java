@@ -8,6 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -19,10 +20,10 @@ public class BaseModel {
     private int id;
 
     @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    private Timestamp createdAt;
+    @Temporal(value = TemporalType.TIMESTAMP)
+    private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    private Timestamp updatedAt;
+    @Temporal(value = TemporalType.TIMESTAMP)
+    private LocalDateTime updatedAt;
 }
